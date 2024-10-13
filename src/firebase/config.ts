@@ -46,5 +46,7 @@ export const authProvider = new GoogleAuthProvider();
 export const auth = getAuth();
 
 export async function login(): Promise<UserCredential> {
-  return signInWithPopup(auth, authProvider);
+  signInWithRedirect(auth, new GoogleAuthProvider());
+  const userCred = await getRedirectResult(auth);
+  return userCred
 }
