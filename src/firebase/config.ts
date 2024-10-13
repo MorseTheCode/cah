@@ -45,11 +45,5 @@ export const usersCollection = createCollection<UserType>('users');
 export const adminsCollection = createCollection('admins');
 
 export async function login(): Promise<UserCredential> {
-  signInWithPopup(auth, authProvider)
-  .then((result) => {
-    // O usuário foi autenticado com sucesso
-    const user = result.user;
-    console.log(user);
-    return result;
-  })
+  return signInWithPopup(auth, authProvider);
 }
