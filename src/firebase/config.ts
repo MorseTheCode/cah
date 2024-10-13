@@ -50,9 +50,6 @@ export async function login(): Promise<UserCredential> {
     // O usuário foi autenticado com sucesso
     const user = result.user;
     console.log(user);
-    return user;
+    return result;
   })
-  .catch((error) => {
-    console.error("Erro durante o login: ", error);
-  });
 }
